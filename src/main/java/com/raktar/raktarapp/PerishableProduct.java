@@ -14,4 +14,10 @@ public class PerishableProduct extends AbstractProduct {
     public String getProductDetails() {
         return name + ", " + sku + ", " + quantity + ", " + price + ", " + expirationDate;
     }
+
+    public String getExpirationDate() {
+        return expirationDate;
+    }
+
+
 }

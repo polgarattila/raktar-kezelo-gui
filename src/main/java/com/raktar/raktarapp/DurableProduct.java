@@ -18,4 +18,8 @@ public class DurableProduct extends AbstractProduct implements Discountable {
         // Itt számoljuk ki az új árat: ár = ár * (1 - százalék/100)
         this.price -= this.price * (percentage / 100);
     }
+
+    public int getWarrantyMonths() {
+        return warrantyMonths;
+    }
 }

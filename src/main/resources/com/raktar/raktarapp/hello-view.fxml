@@ -1,16 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+<VBox spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.raktar.raktarapp.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
+    <TableView fx:id="productTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="nameColumn" text="Név" />
+            <TableColumn fx:id="skuColumn" text="Cikkszám" />
+            <TableColumn fx:id="quantityColumn" text="Mennyiség" />
+            <TableColumn fx:id="priceColumn" text="Ár" />
+            <TableColumn fx:id="detailsColumn" text="Részletek" />
+        </columns>
+    </TableView>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Név:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="nameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Cikkszám:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="skuField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Mennyiség:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="quantityField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Ár:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="priceField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Típus:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="typeComboBox" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label fx:id="expiryLabel" text="Lejárat:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="expiryDatePicker" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+        <Label fx:id="warrantyLabel" text="Garancia (hó):" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <TextField fx:id="warrantyField" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+        <Button text="Mentés" onAction="#onSaveButtonClick"
+                GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+    </GridPane>
+
     <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+    <HBox spacing="10">
+        <Button text="Leárazás (10%)" onAction="#onDiscountButtonClick"/>
+        <Button text="Kijelölt törlése" onAction="#onDeleteButtonClick" style="-fx-base: #ff6666;"/>
+    </HBox>
 </VBox>
