@@ -54,7 +54,7 @@ The application interface is in **Hungarian**.
 ### Option 2: Running from Source
 ```bash
 # Clone the repository
-git clone [https://github.com/polgarattila/raktar-kezelo-gui.git](https://github.com/polgarattila/raktar-kezelo-gui.git)
+git clone [https://github.com/polgarattila/raktar-kezelo-gui.git]
 
 # Navigate to the folder
 cd raktar-kezelo-gui
